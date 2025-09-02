@@ -4,8 +4,10 @@
     <!-- titel und metadaten -->
     <title><?php echo $heading; ?></title>
     <meta name="description" content="<?php echo $description ?>">
-    <link rel="stylesheet" href="<?php echo $files ?>/styles.css">
-    <script src="<?php echo $files ?>/script.js"></script>
+    <link rel="stylesheet" href="<?php echo $files ?>/styles.css"> <!-- lokale styles -->
+    <link rel="stylesheet" href="styles.css"> <!-- globale styles -->
+    <script src="<?php echo $files ?>/script.js"></script> <!-- lokale skripte -->
+    <script src="script.js"></script> <!-- globale skripte -->
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
