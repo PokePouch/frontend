@@ -1,6 +1,4 @@
-<!DOCTYPE html>
 <head>
-
     <!-- titel und metadaten -->
     <title><?php echo $heading; ?></title>
     <meta name="description" content="<?php echo $description ?>">

@@ -1,1 +1,3 @@
-echo('seite wurde nicht gefunden')
+<?php 
+
+echo('seite wurde nicht gefunden');
