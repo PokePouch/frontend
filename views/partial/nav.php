@@ -2,16 +2,16 @@
     <nav>
         <ul>
             <li>
-                <a>home</a>
+                <a href="#">home</a>
             </li>
             <li>
-                <a>series</a>
+                <a href="/series">series</a>
             </li>
             <li>
-                <a>kamera</a>
+                <a href="/camera">kamera</a>
             </li>
             <li>
-                <a>profile</a>
+                <a href="/profile">profile</a>
             </li>
         </ul>
     </nav>
