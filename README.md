@@ -16,3 +16,4 @@ Das Frontend der App. Joa. Das ist es eigentlich
 # Setup
 - php installieren
 - script starten mit `php -S localhost:8080 -t public`
+- http://localhost:8080 
