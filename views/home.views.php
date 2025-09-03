@@ -8,9 +8,10 @@
 
         <main>
             <!-- main content -->
+            Hello World
         </main>
 
-        <?php require base_path("views/partials/nav.php") ?>
+        <?php require base_path("views/partial/nav.php") ?>
 
         <?php require base_path("views/partial/footer.php") ?>
     </body>
