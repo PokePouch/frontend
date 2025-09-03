@@ -11,9 +11,9 @@
             Hello World
         </main>
 
-        <?php require base_path("views/partial/nav.php") ?>
-
         <?php require base_path("views/partial/footer.php") ?>
+
+        <?php require base_path("views/partial/nav.php") ?>
     </body>
 
 </html>
