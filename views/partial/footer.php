@@ -1,1 +1,1 @@
-footer
+<div style="width:100%;background-color:#fff">footer</div>

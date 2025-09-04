@@ -2,16 +2,16 @@
     <nav>
         <ul>
             <li>
-                <a href="#">home</a>
+                <a href="#">🏠</a>
             </li>
             <li>
-                <a href="/series">series</a>
+                <a href="/series">🗃️</a>
             </li>
             <li>
-                <a href="/camera">kamera</a>
+                <a href="/camera">📷</a>
             </li>
             <li>
-                <a href="/profile">profile</a>
+                <a href="/profile">👤</a>
             </li>
         </ul>
     </nav>
