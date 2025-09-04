@@ -1,1 +1,6 @@
-seite wurde nicht gefunden
+<center>
+    <h1>Hmm, scheinbar haben wir dich verloren</h1>
+    <p>Diese Seite kennen wir leider nicht :/</p>
+    <hr />
+    <a href="/">zurück zur Startseite</a>
+</center>
