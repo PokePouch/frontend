@@ -1,3 +1,129 @@
-body {
-    background-color: #1f232d;
+main {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: calc(100vh - 52px - 65px); /* gesamte höhe - header - nav = höhe main */
+}
+
+section {
+    width: calc(100% - 10px);
+    position: relative;
+}
+
+section.greeting {
+    text-align: center;
+    max-width: 100%;
+    text-wrap: wrap;
+}
+
+section.cards {
+    height: 410px;
+    max-width: 500px;
+    overflow: hidden;
+}
+
+.cardWrapper {
+    position: absolute;
+    height: 100%;
+    max-height: 350px;
+    bottom: 40px;
+}
+
+.cardWrapper#card1 {
+    left: 41px;
+    transform: rotate(-15deg);
+    margin-bottom: -10px;
+    animation: card1 3s cubic-bezier(1,0,.62,.89);
+}
+
+@keyframes card1 {
+    0%{transform: rotate(0);margin-bottom: 0;margin-left: calc(50% - 168px);}
+    100%{transform: rotate(-15deg);margin-bottom: -10px; margin-left: 0;}
+}
+
+.cardWrapper#card2 {
+    left: calc(50% - 127px);
+}
+
+.cardWrapper#card3 {
+    right: 41px;
+    transform: rotate(15deg);
+    margin-bottom: -10px;
+    animation: card3 3s cubic-bezier(1,0,.62,.89);
+}
+
+@keyframes card3 {
+    0%{transform: rotate(0);margin-bottom: 0;margin-right: calc(50% - 168px);}
+    100%{transform: rotate(15deg);margin-bottom: -10px; margin-right: 0;}
+}
+
+.cardWrapper > img {
+    height: 100%;
+}
+
+section.search {
+    height: 25px;
+    width: calc(100% - 60px);
+    position: relative;
+
+    border: 2px solid #b3c5f0;
+    border-radius: 5px;
+    background-color: transparent;
+    box-shadow: 0 1px 3px 1px #b3c5f0;
+}
+
+section.search:hover {
+    border-color: #d9e0f0;
+}
+
+input.searchbar {
+    display: inline-block;
+    width: calc(100% - 25px);
+    height: 100%;
+    padding: 0;
+
+    border: none;
+    background-color: transparent;
+    color: #d9e0f0;
+}
+
+input.searchbar:focus, input.searchbar:focus-within, input.searchbar:focus-visible {
+    outline: none; 
+}
+
+
+label.searchbar {
+    position: absolute;
+    left: 10px;
+    bottom: 0;
+    margin-left: 0;
+    margin-bottom: 0;
+    height: fit-content;
+    text-align: center;
+    transition-duration: 0.2s;
+    color: #d9e0f0;
+    font-weight: 600;
+}
+
+input.searchbar:focus ~ label.searchbar, .removeLabel {
+    margin-bottom: 25px !important;
+    margin-left: -10px !important;
+}
+
+#startQuery {
+    display: inline-block;
+    height: 23px;
+    width: 23px;
+    padding: 1px;
+    background-color: #b3c5f0;
+    border: none;
+}
+
+#startQuery:hover, section.search:hover > #startQuery {
+    cursor: pointer;
+    background-color: #d9e0f0;
 }

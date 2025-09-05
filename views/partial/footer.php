@@ -1,1 +1,1 @@
-<div style="width:100%;background-color:#fff">footer</div>
+<footer style="width:100%;text-align:center">See participants on <a href="https://github.com/PokeScam">GitHub</a></footer>

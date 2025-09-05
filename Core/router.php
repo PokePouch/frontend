@@ -1,22 +1,24 @@
 <?php
 
-$uri = parse_url($_SERVER["REQUEST_URI"])['path'];
+$uri = parse_url(url: $_SERVER["REQUEST_URI"])['path'];
+$lastSide = checkCookie(thisSite: $uri);
 
 $routes = [
     '/' => 'controllers/home.php',
     '/card' => 'controllers/card.php',
+    '/camera' => 'controllers/camera.php',
 ];
 
-function abort($code = 404) {
-    http_response_code($code);;
+function abort($code = 404): never {
+    http_response_code(response_code: $code);;
 
-    require base_path("views/{$code}.php");
+    require base_path(path: "views/{$code}.php");
 
     die();
 }
 
-if(array_key_exists($uri, $routes)) {
-    require base_path($routes[$uri]);
+if(array_key_exists(key: $uri, array: $routes)) {
+    require base_path(path: $routes[$uri]);
 } else {
-    abort(404);
+    abort(code: 404);
 }

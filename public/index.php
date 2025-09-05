@@ -1,8 +1,5 @@
 <?php
 
-const BASE_PATH = __DIR__ . "/../";
+require __DIR__ . "/../" . "Core/functions.php";
 
-require BASE_PATH . "Core/functions.php";
-
-
-require base_path('Core/router.php');
+require base_path(path: 'Core/router.php');

@@ -1,9 +1,31 @@
+.zen-kaku-gothic-new-regular {
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.zen-kaku-gothic-new-black {
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
 body {
     margin: 0;
     background-color: #1f232d;
     color: #fff;
     min-height: 100vh;
     font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    font-family: "Zen Kaku Gothic New", Arial, Helvetica, sans-serif;
+}
+
+h1, h2 {
+    font-weight: 900;
+}
+
+a {
+    color: inherit;
 }
 
 /* Header Container */
@@ -13,10 +35,9 @@ header.container {
     justify-content: center;
     position: relative;
     background-color: rgba(0,0,0,0.2);
-    border: 1px solid #d0d341;
-    border-radius: 5px;
+    border-bottom: 1px solid #d0d341;
     box-shadow: 0 1px 3px 1px rgba(214, 216, 74, 0.4);
-    margin: 8px; 
+    margin-bottom: 10px;
 }
 
 header.container > .logo {
@@ -36,7 +57,10 @@ header.container > .title {
 
 
 /* footer */
-
+footer {
+    height: 20px;
+    margin-top: 20px;
+}
 
 /* navigation */
 .navContainer {
@@ -72,16 +96,12 @@ nav > ul {
 
 nav > ul > li {
     height: fit-content; 
+    list-style: none;
 }
-
-nav > ul > li::marker {
-    content: '';
-}
-
 nav > ul > li > a {
     text-decoration: none;
     color: #fff;
-    position: relative;    
+    position: relative;
 }
 
 nav > ul > li > a::after {
