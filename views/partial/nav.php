@@ -2,7 +2,7 @@
     <nav>
         <ul>
             <li>
-                <a href="#">🏠</a>
+                <a href="/">🏠</a>
             </li>
             <li>
                 <a href="/series">🗃️</a>
