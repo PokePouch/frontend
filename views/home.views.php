@@ -16,7 +16,7 @@
             <!-- Begrüßung -->
             <section class="greeting">
                 <div>
-                    <h2 id="greetingUser">Willkommen broski</h2>
+                    <h2 id="greetingUser">Willkommen</h2>
                     <?php
 
                     if ($lastSide) {

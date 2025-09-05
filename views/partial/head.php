@@ -4,9 +4,9 @@
     <meta name="description" content="<?php echo $description ?>">
 
     <link rel="stylesheet" href="/styles.css"> <!-- globale styles -->
-    <link rel="stylesheet" href="/<?php echo $files ?>/styles.css"> <!-- lokale styles -->
+    <link rel="stylesheet" href="/data/<?php echo $files ?>/styles.css"> <!-- lokale styles -->
     <script src="/script.js"></script> <!-- globale skripte -->
-    <script src="/<?php echo $files ?>/script.js"></script> <!-- lokale skripte -->
+    <script src="/data/<?php echo $files ?>/script.js"></script> <!-- lokale skripte -->
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
