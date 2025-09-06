@@ -8,8 +8,7 @@
 
         <main>
 
-            <h1> Karte hier scannen </h1>
-            <video id="webcamVideo" autoplay playsinline> </video>     
+            <video id="webcamVideo" autoplay playsinline></video>
    
         </main>
         <?php require base_path(path: "views/partial/footer.php") ?>

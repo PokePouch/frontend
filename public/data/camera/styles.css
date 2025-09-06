@@ -1,0 +1,15 @@
+header {
+    margin-bottom: 0 !important;
+}
+
+main {
+    height: calc(100vh - 42px);
+    margin: auto;
+    display: flex;
+    justify-content: center ;
+    overflow: hidden;
+}
+
+#webcamVideo {
+    height: 100%;
+}

@@ -30,13 +30,13 @@
             <!-- Fächer aus drei Karten -->
             <section class="cards">
                 <div class="cardWrapper" id="card1">
-                    <img src="https://assets.tcgdex.net/de/sv/sv08/168/high.webp">
+                    <img src="">
                 </div>
                 <div class="cardWrapper" id="card2">
-                    <img src="https://assets.tcgdex.net/de/sv/sv08/168/high.webp">
+                    <img src="">
                 </div>
                 <div class="cardWrapper" id="card3">
-                    <img src="https://assets.tcgdex.net/de/sv/sv08/168/high.webp">
+                    <img src="">
                 </div>
             </section>
         </main>

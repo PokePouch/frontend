@@ -102,31 +102,45 @@ function moveLabel() {
 
 async function searchSuggestions(input) {
         const suggBox = document.getElementById('suggBox');
-        suggBox.innerText = '';
+        
+        let snail;
 
-        if (input.length >= 3) {
-        console.log('Vorschläge basierend auf: ', input);
+        if (input.length >= 3 && input.length <= 25) {
+            if (! checkForSnail(suggBox)) {
+                suggBox.innerText = '';
+                snail = startSnail(suggBox);
+            } else {
+                let children = suggBox.children;
+                snail = children.find((e) => e === document.getElementsByClassName('loadingSnail')[0]);
+            }
 
-        const searchWrapper = document.querySelector('section.search');
+            const searchWrapper = document.querySelector('section.search');
 
-        //get top 5 results in top5 variable with type
+            //get top 5 results in top5 variable with type
 
-        const top5 = [
-            { name: 'Lorem', type: 'pokemon' },
-            { name: 'ipsum', type: 'series' },
-            { name: 'dolor', type: 'set' },
-            { name: 'sit', type: 'user' },
-            { name: 'amet', type: 'pokemon' }
-        ];
+            try {
+                let url = `https://api.felixstaude.de/api/cards?q=${input}&size=5`
+                const data = await fetch(url);
+                let response = await data.json();
+                let results = response.content;
 
-        top5.forEach(result =>{
-            const resultBox = document.createElement('div');
-            resultBox.innerText = result.name;
-            resultBox.classList.add('singleResult')
-            resultBox.classList.add(result.type);
-            suggBox.appendChild(resultBox);
-        })
-        searchWrapper.appendChild(suggBox);
+                results.forEach(result =>{
+                    const resultBox = document.createElement('a');
+                    resultBox.innerText = result.name +  ' - ' + result.set.name;
+                    resultBox.href = window.location.origin + '/card/' + result.id;
+                    resultBox.classList.add('singleResult');
+                    resultBox.classList.add(result.type);
+                    suggBox.appendChild(resultBox);
+                })
+                destroySnail(snail);
+                searchWrapper.appendChild(suggBox);
+            } catch (e) {
+                console.warn(e)
+            }
+        }
+
+    if (input.lenght === 0 ) {
+        destroySnail(snail);
     }
 }
 

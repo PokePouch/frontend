@@ -21,3 +21,33 @@ function getCookieValue(name) {
 }
 
 const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
+
+function startSnail(father) {
+
+    const snail = document.createElement('div');
+    snail.classList.add('loadingSnail');
+    father.appendChild(snail);
+
+    return snail;
+}
+
+function checkForSnail(father) {
+    const child = father.childNodes[0];
+    let existingSnail = child ?? false;
+
+    if (existingSnail) {
+        if (existingSnail.classList[0] === 'loadingSnail') {
+            return existingSnail;
+        }
+    }
+    return false;
+}
+
+function destroySnail(snail) {
+    try {
+        snail.remove();
+    } catch(e) {
+        return e;
+    }
+    return 'success';
+}

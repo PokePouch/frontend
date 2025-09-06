@@ -1,12 +1,10 @@
 main {
     width: 100%;
-    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    height: calc(100vh - 52px - 65px); /* gesamte höhe - header - nav = höhe main */
 }
 
 section {
@@ -82,7 +80,7 @@ section.search:hover {
 
 input.searchbar {
     display: inline-block;
-    width: calc(100% - 25px);
+    width: calc(100% - 28px);
     height: 100%;
     padding: 0;
     padding-left: 3px;
@@ -130,25 +128,32 @@ input.searchbar:focus ~ label.searchbar, .removeLabel {
 
 #suggBox {
     padding-top: 5px;
+    display: flex;
+    flex-direction: column;
 }
 
 .singleResult {
     display: inline-block;
     padding: 3px;
+    background-color: rgb(31,35,45,.7);
+    backdrop-filter: blur(3px);
     border-radius: 4px;
-    border-width: 2px;
+    border: 2px solid rgba(255, 255, 255, .3);
     border-style: solid;
     margin: 2px;
     min-width: 40px;
     text-align: center;
     cursor: pointer;
+    text-decoration: none;
+    transition-duration: 0.1s;
+    z-index: 999;  /*lljw🕊️*/
 }
 
 .singleResult:hover {
     box-shadow: 0 0 3px #fff inset ;
 }
 
-.pokemon {
+/* .pokemon {
     background-color: rgb(121, 121, 0,.3);
     border-color: rgb(247, 247, 132);
 }
@@ -163,4 +168,4 @@ input.searchbar:focus ~ label.searchbar, .removeLabel {
 .user {
     background-color: rgb(0, 56, 0,.3);
     border-color: rgb(166, 250, 166);
-}
+} */
