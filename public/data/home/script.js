@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     replaceText(possibleTexts);
 
     let searchbarInput = document.getElementById('search');
-    searchbarInput.addEventListener('input', (i) => {
+    searchbarInput.addEventListener('input', () => {
         moveLabel(); //remove label when input has value
         searchSuggestions(searchbarInput.value); // suggest results
     });
@@ -99,29 +99,30 @@ function moveLabel() {
 
 
 // helper function for search
+
 async function searchSuggestions(input) {
-    if (input.length >= 3) {
+        const suggBox = document.getElementById('suggBox');
+        suggBox.innerText = '';
+
+        if (input.length >= 3) {
         console.log('Vorschläge basierend auf: ', input);
 
         const searchWrapper = document.querySelector('section.search');
-        const suggBox = document.createElement('div');
-
-        suggBox.classList.add('suggBox');
-
 
         //get top 5 results in top5 variable with type
 
         const top5 = [
-            ['name' = 'Lorem', 'type' = 'pokémon'],
-            ['name' = 'ipsum', 'type' = 'series'],
-            ['name' = 'dolor', 'type' = 'set'],
-            ['name' = 'sit', 'type' = 'user'],
-            ['name' = 'amet', 'type' = 'pokémon']
-        ]
+            { name: 'Lorem', type: 'pokemon' },
+            { name: 'ipsum', type: 'series' },
+            { name: 'dolor', type: 'set' },
+            { name: 'sit', type: 'user' },
+            { name: 'amet', type: 'pokemon' }
+        ];
 
         top5.forEach(result =>{
-            const resultBox = document.createAttribute('div');
+            const resultBox = document.createElement('div');
             resultBox.innerText = result.name;
+            resultBox.classList.add('singleResult')
             resultBox.classList.add(result.type);
             suggBox.appendChild(resultBox);
         })

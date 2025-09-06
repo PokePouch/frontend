@@ -11,6 +11,7 @@
             <section class="search">
                 <input class="searchbar" type="text" id="search"/><a id="startQuery">🔎</a>
                 <label class="searchbar" for="search" id="searchbarLabel">Suche nach <span id="searchFor">Pokémon</span></label>
+                <div id="suggBox"></div>
             </section>
 
             <!-- Begrüßung -->
