@@ -5,10 +5,10 @@ $lastSide = checkCookie(thisSite: $uri);
 
 $routes = [
     '/'           => 'controllers/home.php',
-    '/card'       => 'controllers/card.php',
+    '/card'       => 'controllers/cardss/card.php',
+    '/series'     => 'controllers/cards/series.php',
+    '/sets'       => 'controllers/cards/sets.php',
     '/camera'     => 'controllers/camera.php',
-    '/series'     => 'controllers/series.php',
-    '/sets'       => 'controllers/sets.php',
     '/profile'    => 'controllers/profile.php',
     '/management' => 'controllers/management.php'
 ];
@@ -18,6 +18,22 @@ function abort($code = 404): never {
     require base_path(path: "views/{$code}.php");
     die();
 }
+
+if (str_starts_with($uri, '/series/')) {
+    require base_path('controllers/cards/series.php');
+    exit;
+}
+
+if (str_starts_with($uri, '/sets/')) {
+    require base_path('controllers/cards/sets.php');
+    exit;
+}
+
+if (str_starts_with($uri, '/card/')) {
+    require base_path('controllers/cards/card.php');
+    exit;
+}
+
 
 if(array_key_exists(key: $uri, array: $routes)) {
     require base_path(path: $routes[$uri]);
