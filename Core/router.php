@@ -20,17 +20,17 @@ function abort($code = 404): never {
 }
 
 if (str_starts_with($uri, '/series/')) {
-    require base_path('controllers/cards/series.php');
+    require base_path('controllers/cards/series_id.php');
     exit;
 }
 
 if (str_starts_with($uri, '/sets/')) {
-    require base_path('controllers/cards/sets.php');
+    require base_path('controllers/cards/set_id.php');
     exit;
 }
 
 if (str_starts_with($uri, '/card/')) {
-    require base_path('controllers/cards/card.php');
+    require base_path('controllers/cards/card_id.php');
     exit;
 }
 
