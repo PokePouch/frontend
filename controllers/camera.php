@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 $heading = "Kamera";
 $files = "camera";
