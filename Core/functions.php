@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 function dd($value) {
     echo"<pre>";
@@ -22,6 +22,12 @@ function defineLink(): string {
     $fullUri = $_SERVER["REQUEST_URI"];
 
     return "https://{$host}{$fullUri}";
+}
+
+function defineHost(): string {
+    $host = $_SERVER["HTTP_HOST"];
+
+    return "https://{$host}";
 }
 
 function checkCookie($thisSite) {

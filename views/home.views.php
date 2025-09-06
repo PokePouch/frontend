@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 
     <?php require base_path(path: "views/partial/head.php"); ?>

@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 $uri = parse_url(url: $_SERVER["REQUEST_URI"])['path'];
 $lastSide = checkCookie(thisSite: $uri);

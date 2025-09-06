@@ -136,9 +136,16 @@ input.searchbar:focus ~ label.searchbar, .removeLabel {
     display: inline-block;
     padding: 3px;
     border-radius: 4px;
-    border: 2px solid #fff;
+    border-width: 2px;
+    border-style: solid;
     margin: 2px;
-    min-width: 20px;
+    min-width: 40px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.singleResult:hover {
+    box-shadow: 0 0 3px #fff inset ;
 }
 
 .pokemon {

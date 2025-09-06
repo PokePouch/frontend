@@ -1,4 +1,5 @@
 <head>
+    <meta charset="UTF-8">
     <!-- titel und metadaten -->
     <title><?php echo $heading; ?> | PokéPouch</title>
     <meta name="description" content="<?php echo $description ?>">
@@ -8,7 +9,6 @@
     <script src="/script.js"></script> <!-- globale skripte -->
     <script src="/data/<?php echo $files ?>/script.js"></script> <!-- lokale skripte -->
 
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,9 +24,9 @@
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta property="twitter:domain" content="<?php echo $host ?>">
-    <meta property="twitter:url" content="<?php echo defineLink() ?>">
-    <meta name="twitter:title" content="<?php echo $heading; ?> | PokéPouch">
+    <meta name="twitter:domain" content="<?php echo defineHost() ?>">
+    <meta name="twitter:url" content="<?php echo defineLink() ?>">
+    <meta name="twitter:title" content="<?php echo $heading ?> | PokéPouch">
     <meta name="twitter:description" content="<?php echo $description ?>">
     <meta name="twitter:image" content="">
 </head>

@@ -1,4 +1,4 @@
-﻿document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
     const webcamVideo = document.getElementById("webcamVideo");
 
     navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment"} })

@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 $heading = "Series";
 $files = "series";
