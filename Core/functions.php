@@ -8,10 +8,6 @@ function dd($value) {
     die();
 }
 
-function urlIs($value): bool {
-    return $_SERVER["REQUEST_URI"] == $value;
-}
-
 function base_path($path): string {
     return __DIR__ . "/../" . $path;
 }

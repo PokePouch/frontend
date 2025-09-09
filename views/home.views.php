@@ -9,7 +9,7 @@
         <main>
             <!-- Suchleiste -->
             <section class="search">
-                <input class="searchbar" type="text" id="search"/><a id="startQuery">🔎</a>
+                <input class="searchbar" type="text" id="search" maxlength="25"/><a id="startQuery">🔎</a>
                 <label class="searchbar" for="search" id="searchbarLabel">Suche nach <span id="searchFor">Pokémon</span></label>
                 <div id="suggBox"></div>
             </section>
@@ -30,13 +30,13 @@
             <!-- Fächer aus drei Karten -->
             <section class="cards">
                 <div class="cardWrapper" id="card1">
-                    <img src="">
+                    <img src="https://assets.tcgdex.net/en/swsh/swsh3/136/high.webp" tabindex="0">
                 </div>
                 <div class="cardWrapper" id="card2">
-                    <img src="">
+                    <img src="https://assets.tcgdex.net/en/swsh/swsh3/137/high.webp" tabindex="0">
                 </div>
                 <div class="cardWrapper" id="card3">
-                    <img src="">
+                    <img src="https://assets.tcgdex.net/en/swsh/swsh3/138/high.webp" tabindex="0">
                 </div>
             </section>
         </main>

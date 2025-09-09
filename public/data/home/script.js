@@ -1,10 +1,12 @@
-//---- neccessary functions ----
-// - display correct welcome message
-// - remove label when input has value
-// - edit search for every few seconds
-// - search
-
 document.addEventListener('DOMContentLoaded', () => {
+
+    //start animation fpr pictures as soon as they load
+    document.querySelectorAll('.cardWrapper img').forEach(img => {
+        img.addEventListener('load', () => {
+            img.parentElement.classList.add('startAnimation'); 
+        });
+    });
+
     // welcome user
     let greetingUser = document.getElementById('greetingUser');
     let user = getCookieValue('username') ?? 'zukünftiger Poucher';
@@ -21,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'Benutzern',
         'Pokémon'
     ]
-    replaceText(possibleTexts);
+    replaceTextLoop(possibleTexts, document.getElementById('searchFor'));
 
     let searchbarInput = document.getElementById('search');
     searchbarInput.addEventListener('input', () => {
@@ -49,42 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 })
 
-
-//helper functions to replace text
-async function replaceText(possibleTexts) {
-    while (true) {
-        for (const text of possibleTexts) {
-            await sleep(2000); // 1 sec = 1000 ms
-            await replaceSeachbarText(text);
-        }
-    }
-}
-
-async function replaceSeachbarText(nText) {
-    let cText = document.getElementById('searchFor').innerText;
-    let cLenght = cText.length;
-
-    while (cLenght > -1) {
-        cText = cText.substring(0, cLenght );
-        cLenght--;
-        document.getElementById('searchFor').innerText = cText;
-
-        await sleep(75);
-    }
-
-    const textArray = nText.split('')
-    let currentText = '';
-
-    for (const char of textArray) {
-        currentText += char;
-        document.getElementById('searchFor').innerText = currentText;
-
-        await sleep(75);
-    }
-    return true;
-}
-
-
 //helper functions to move label away
 function moveLabel() {
     let searchbarInput = document.getElementById('search');
@@ -97,33 +63,25 @@ function moveLabel() {
     }
 }
 
-
 // helper function for search
-
 async function searchSuggestions(input) {
         const suggBox = document.getElementById('suggBox');
         
         let snail;
 
         if (input.length >= 3 && input.length <= 25) {
-            if (! checkForSnail(suggBox)) {
-                suggBox.innerText = '';
-                snail = startSnail(suggBox);
-            } else {
-                let children = suggBox.children;
-                snail = children.find((e) => e === document.getElementsByClassName('loadingSnail')[0]);
-            }
+            if (! suggBox.querySelector('.loadingSnail')) {suggBox.innerText = ''}
+            snail = suggBox.querySelector('.loadingSnail') ?? startSnail(suggBox);
 
             const searchWrapper = document.querySelector('section.search');
 
             //get top 5 results in top5 variable with type
 
-            try {
-                let url = `https://api.felixstaude.de/api/cards?q=${input}&size=5`
-                const data = await fetch(url);
-                let response = await data.json();
-                let results = response.content;
 
+            let url = `https://api.felixstaude.de/api/cards?q=${input}&size=5`;
+            const results = await getAPIData(url);
+
+            if (results) {
                 results.forEach(result =>{
                     const resultBox = document.createElement('a');
                     resultBox.innerText = result.name +  ' - ' + result.set.name;
@@ -131,20 +89,18 @@ async function searchSuggestions(input) {
                     resultBox.classList.add('singleResult');
                     resultBox.classList.add(result.type);
                     suggBox.appendChild(resultBox);
-                })
-                destroySnail(snail);
-                searchWrapper.appendChild(suggBox);
-            } catch (e) {
-                console.warn(e)
-            }
-        }
+                });
+            };
+            snail.remove();
 
-    if (input.lenght === 0 ) {
-        destroySnail(snail);
-    }
+        } else {
+            suggBox.querySelector('.loadingSnail') ? suggBox.querySelector('.loadingSnail').remove() : '';
+        }
 }
 
 function search(querystring) {
-    let q = encodeURI(querystring);
-    window.open(window.location.origin + '/s?q=' + q)
+    if (querystring) {
+        let q = encodeURI(querystring);
+        window.location = window.location.origin + '/s?q=' + q;
+    }
 }

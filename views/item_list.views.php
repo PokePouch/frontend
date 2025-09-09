@@ -8,7 +8,9 @@
 
         <main>
 
-            <h1> Lister aller Sets </h1> 
+            <h1><?php echo $heading ?></h1>
+            
+            <section id="allItems"></section>
    
         </main>
         <?php require base_path(path: "views/partial/footer.php") ?>

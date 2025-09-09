@@ -10,19 +10,30 @@
   font-style: normal;
 }
 
+:root {
+    --blue-bg: #0a013a;
+    --blue-accent: #b3c5f0;
+    --blue-accent-light: #d4dff7;
+    --blue-accent-trans: #a7bced6b;
+    --yellow: #e0c127;
+    --yellow-light: rgba(209, 186, 15, 0.4);
+
+}
+
 body {
     margin: 0;
-    background-color: #1f232d;
+    background-color: var(--blue-bg);
     color: #fff;
     min-height: 100vh;
-    font-family: Arial, Helvetica, sans-serif;
     position: relative;
     font-family: "Zen Kaku Gothic New", Arial, Helvetica, sans-serif;
 }
 
 main {
     max-width: 1200px;
-    height: calc(100vh - 52px - 65px); /* gesamte höhe - header - nav = höhe main */
+    width: 100%;
+    margin: 0 auto;
+    height: calc(100vh - 63px - 69px); /* gesamte höhe - header - nav = höhe main */
 }
 
 h1, h2 {
@@ -42,7 +53,7 @@ a {
     border-top-width: 2px;
     border-top-style: solid;
     border-top-color: transparent;
-    border-top: 2px solid #d9e0f0;
+    border-top: 2px solid var(--blue-accent);
     animation: snail 1s infinite linear ;
 }
 
@@ -57,10 +68,9 @@ header.container {
     align-items: center;
     justify-content: center;
     position: relative;
-    background-color: rgba(0,0,0,0.2);
-    border-bottom: 1px solid #d0d341;
-    box-shadow: 0 1px 3px 1px rgba(214, 216, 74, 0.4);
-    margin-bottom: 10px;
+    border-bottom: 2px solid var(--yellow);
+    box-shadow: 0 1px 3px 1px var(--yellow-light);
+    margin-bottom: 20px;
 }
 
 header.container > .logo {
@@ -74,7 +84,7 @@ header.container > .title {
     font-size: 1.8rem;
     font-weight: 800;
     margin: 0;
-    color: #fff; /* weiß für guten Kontrast */
+    color: #fff;
     letter-spacing: 1px;
 }
 
@@ -100,8 +110,7 @@ footer {
 nav {
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.3);
-    border: 1px solid #d0d341;
+    border: 2px solid var(--yellow);
     border-radius: 5px;
     box-shadow: 0 1px 3px 1px rgba(214, 216, 74, 0.4);
     backdrop-filter: blur(10px);
@@ -131,12 +140,12 @@ nav > ul > li > a::after {
     content: '';
     width: 100%;
     height: 1px;
-    color: #d0d341;
+    color: var(--yellow);
     right: 100%;
     bottom: -1px;
     position: absolute;
 }
 
 nav > ul > li > a:hover nav > ul > li > a::after {
-    text-shadow: 0 0 2px #d0d341;
+    text-shadow: 0 0 2px var(--yellow);
 };

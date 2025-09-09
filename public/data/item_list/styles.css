@@ -1,0 +1,40 @@
+h1 {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+section {
+    width: calc(100% - 4px);
+    padding: 2px;
+}
+
+.itemWrapper {
+    width: calc(100% - 4px);
+    border: 2px solid var(--blue-accent);
+    border-radius: 5px;
+    margin-bottom: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-image: linear-gradient(to right, transparent 33%,var(--blue-accent-trans) 50%,transparent 67%);
+    background-size: 300%;
+    background-position: 100%;
+    transform: scale(0.9);
+    transition: border-color 0.2s, transform 0.5s;
+}
+.itemWrapper:hover {
+    background-position: 300%;
+    border-color: var(--blue-accent-trans);
+    transform: scale(1);
+    transition: background-position 0.5s;
+}
+
+.itemWrapper > h3{
+    margin: 0;
+}
+
+.itemWrapper > img {
+    width: 66%;
+}

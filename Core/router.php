@@ -6,8 +6,8 @@ $lastSide = checkCookie(thisSite: $uri);
 $routes = [
     '/'           => 'controllers/home.php',
     '/card'       => 'controllers/cardss/card.php',
-    '/series'     => 'controllers/cards/series.php',
-    '/sets'       => 'controllers/cards/sets.php',
+    '/series'     => 'controllers/cards/item_list.php',
+    '/sets'       => 'controllers/cards/item_list.php',
     '/camera'     => 'controllers/camera.php',
     '/profile'    => 'controllers/profile.php',
     '/management' => 'controllers/management.php'
@@ -20,7 +20,7 @@ function abort($code = 404): never {
 }
 
 if (str_starts_with($uri, '/series/')) {
-    require base_path('controllers/cards/series_id.php');
+    require base_path('controllers/cards/item_list.php');
     exit;
 }
 
